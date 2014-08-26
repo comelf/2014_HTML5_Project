@@ -40,11 +40,6 @@ var Parallax = {
 
 	scrollUp : function(page){
 		var divArr = document.getElementById("firstParallax").childNodes;
-		
-		for(div in divArr){
-			if(div.nodeName =="DIV")
-				
-		}
 	},
 
 	firstPageInitialize : function(){
@@ -76,7 +71,20 @@ var Parallax = {
 			topValue = ch + "px";
 			bubbles[i].style.top = topValue;
 		}
+	},
+
+	relocation : function(){
+	
+		wHeight = window.innerHeight;
+		wWidth  = window.innerWidth; 
+		var top = Math.random() * 10000 % wHeight;
+		var left = Math.random() * 10000 % wWidth;
+		var pxSize = 150 * Math.floor(Math.random() * 100);
+
+		var cssStyle = "top: " +top +"; left: "+ left +"; height: "+pxSize+"+px; width: "+pxSize+"px; background-size: "+pxSize*10+"px;";
+
 	}
+
 }
 
 Parallax.init();
