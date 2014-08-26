@@ -43,7 +43,7 @@ var Parallax = {
 		
 		for(div in divArr){
 			if(div.nodeName =="DIV")
-				console.log(div);
+				
 		}
 	},
 
@@ -57,7 +57,6 @@ var Parallax = {
 			var rate = Math.floor(150 * (Math.random())) +30;
 			var cssStyle = "top: " +top +"px; left: "+ left +"px; height: "+rate+"px; width: "+rate+"px; background-size: "+Math.floor(rate*1.1) +"px;"
 			bubbles[i].style.cssText = cssStyle;
-			console.log(rate);
 			bubbles[i].dataset.rate = rate;
 		}
 	},
@@ -74,31 +73,10 @@ var Parallax = {
 			var topValue = parseInt(top.substring(0,(top.length-2)));
 			var ch = topValue - Math.floor(window.innerHeight * (rate /1200) );
 
-			if(i===1){
-				console.log("windowH : " + window.innerHeight);
-				console.log("rate    : " + rate);
-				console.log("ch : " + ch);
-			}
-
 			topValue = ch + "px";
 			bubbles[i].style.top = topValue;
 		}
-	},
-
-	relocation : function(){
-		console.log("haha");
-		wHeight = window.innerHeight;
-		wWidth  = window.innerWidth; 
-		var top = Math.random() * 10000 % wHeight;
-		var left = Math.random() * 10000 % wWidth;
-		var pxSize = 150 * Math.floor(Math.random() * 100);
-
-		var cssStyle = "top: " +top +"; left: "+ left +"; height: "+pxSize+"+px; width: "+pxSize+"px; background-size: "+pxSize*10+"px;"
-		// console.log(t);
-		//b.style.cssText  = cssStyle;
-
 	}
-
 }
 
 Parallax.init();
